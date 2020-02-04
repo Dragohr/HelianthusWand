@@ -1,4 +1,4 @@
-package me.soulemiya.wands;
+package me.dragohr.wands;
 
 import org.bukkit.inventory.*;
 import org.bukkit.*;

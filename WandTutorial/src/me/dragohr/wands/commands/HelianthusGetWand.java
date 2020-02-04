@@ -1,12 +1,13 @@
-package me.soulemiya.wands.commands;
+package me.dragohr.wands.commands;
 
-import me.soulemiya.wands.*;
 import org.bukkit.command.*;
 import org.bukkit.entity.*;
 import org.bukkit.inventory.*;
 import org.bukkit.*;
 import java.util.*;
 import org.bukkit.inventory.meta.*;
+
+import me.dragohr.wands.*;
 
 public class HelianthusGetWand implements CommandExecutor
 {

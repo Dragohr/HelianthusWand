@@ -1,4 +1,4 @@
-package me.soulemiya.wands;
+package me.dragohr.wands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.event.Listener;
@@ -6,7 +6,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import me.soulemiya.wands.commands.*;
+import me.dragohr.wands.commands.*;
 
 public class Main extends JavaPlugin
 {

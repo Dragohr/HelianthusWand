@@ -1,4 +1,4 @@
-package me.soulemiya.wands;
+package me.dragohr.wands;
 
 import org.bukkit.entity.*;
 import org.bukkit.block.*;
