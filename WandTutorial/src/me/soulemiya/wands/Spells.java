@@ -11,7 +11,7 @@ public class Spells
     public static final String[] helwand;
     
     static {
-        helwand = new String[] { "Lightning", "Explosion Wave", "Flame", "Flowers" };
+        helwand = new String[] { "Lightning", "Explosion Wave", "Explosion", "Flowers" };
     }
     
     public Spells(final Main instance) {
@@ -60,14 +60,14 @@ public class Spells
         final Player p = Bukkit.getPlayer(name);
         final Location loc = p.getLocation();
         final Vector direction = p.getLocation().getDirection().normalize();
-        if (spellname.equalsIgnoreCase("Flame")) {
-            if (p.hasPermission("helwand.spell.flame")) {
-                final BlockIterator blocksToAdd = new BlockIterator(loc, 0.0, 15);
-                final Location blockToAdd = blocksToAdd.next().getLocation();
+        if (spellname.equalsIgnoreCase("Explosion")) {
+            if (p.hasPermission("helwand.spell.explosion")) {
+//                final BlockIterator blocksToAdd = new BlockIterator(loc, 0.0, 15);
+//                final Location blockToAdd = blocksToAdd.next().getLocation();
                 final Fireball f = (Fireball)p.launchProjectile(Fireball.class);
                 f.setYield(8.0f);
                 f.setVelocity(direction.multiply(3));
-                f.getWorld().playEffect(blockToAdd, Effect.FIREWORKS_SPARK, 1);
+//                f.getWorld().playEffect(blockToAdd, Effect.FIREWORKS_SPARK, 1);
             }
             else {
                 p.sendMessage("You do not have the correct permission this use this spell");

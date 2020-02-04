@@ -10,11 +10,8 @@ import org.bukkit.inventory.meta.*;
 
 public class HelianthusGetWand implements CommandExecutor
 {
-    @SuppressWarnings("unused")
-	private Main plugin;
     
     public HelianthusGetWand(final Main plugin) {
-        this.plugin = plugin;
         plugin.getCommand("helwand").setExecutor((CommandExecutor)this);
     }
     
