@@ -23,25 +23,38 @@ public class Listeners implements Listener
         if (a == Action.RIGHT_CLICK_AIR || a == Action.RIGHT_CLICK_BLOCK) {
             @SuppressWarnings("deprecation")
 			final ItemStack i = p.getItemInHand();
-            if (this.WP.wand.isWand(i)) {
-                if (this.WP.wand.hasSpell(name)) {
-                    this.WP.wand.nextSpell(name);
-                    p.sendMessage(String.valueOf(this.WP.title) + ChatColor.GOLD + "You've selected: " + this.WP.spell.getSpell(p));
+            
+            if(p.isSneaking() == true) {
+            	if (this.WP.wand.isWand(i) && this.WP.wand.hasSpell(name)) {
+            		this.WP.wand.prevSpell(name);
+            		p.sendMessage(String.valueOf(this.WP.title) + ChatColor.GOLD + "You've selected: " + this.WP.spell.getSpell(p));
+            	}
+            } else {
+            	if (this.WP.wand.isWand(i)) {
+                    if (this.WP.wand.hasSpell(name)) {
+                        this.WP.wand.nextSpell(name);
+                        p.sendMessage(String.valueOf(this.WP.title) + ChatColor.GOLD + "You've selected: " + this.WP.spell.getSpell(p));
+                    }
+                    else {
+                        this.WP.wand.setSpell(name, 0);
+                        p.sendMessage(String.valueOf(this.WP.title) + ChatColor.GOLD + "You've selected: " + this.WP.spell.getSpell(p));
+                    }
                 }
-                else {
-                    this.WP.wand.setSpell(name, 0);
-                    p.sendMessage(String.valueOf(this.WP.title) + ChatColor.GOLD + "You've selected: " + this.WP.spell.getSpell(p));
-                }
-            }
+            } 
+            
         }
-        else if ((p.isSneaking() && a == Action.RIGHT_CLICK_AIR) || a == Action.RIGHT_CLICK_BLOCK) {
-            @SuppressWarnings("deprecation")
-			final ItemStack i = p.getItemInHand();
-            if (this.WP.wand.isWand(i) && this.WP.wand.hasSpell(name)) {
-                this.WP.wand.prevSpell(name);
-                p.sendMessage(String.valueOf(this.WP.title) + ChatColor.GOLD + "You've selected: " + this.WP.spell.getSpell(p));
-            }
-        }
+//        else if ((p.isSneaking() && a == Action.LEFT_CLICK_AIR) || a == Action.LEFT_CLICK_BLOCK) {
+//            @SuppressWarnings("deprecation")
+//			final ItemStack i = p.getItemInHand();
+//            if (this.WP.wand.isWand(i) && this.WP.wand.hasSpell(name)) {
+//                this.WP.wand.prevSpell(name);
+//                p.sendMessage(String.valueOf(this.WP.title) + ChatColor.GOLD + "You've selected: " + this.WP.spell.getSpell(p));
+//            }
+//            else {
+//                this.WP.wand.setSpell(name, 0);
+//                p.sendMessage(String.valueOf(this.WP.title) + ChatColor.GOLD + "You've selected: " + this.WP.spell.getSpell(p));
+//            }
+//        }
         else if (a == Action.LEFT_CLICK_AIR || a == Action.LEFT_CLICK_BLOCK) {
             @SuppressWarnings("deprecation")
 			final ItemStack i = p.getItemInHand();

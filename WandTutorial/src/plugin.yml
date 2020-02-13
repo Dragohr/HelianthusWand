@@ -1,0 +1,12 @@
+name: Wand
+main: me.dragohr.wands.Main
+version: 1.0
+description: wand plugin
+commands:
+  helwand:
+   aliases: [hw]
+   description: Give yourself a Helianthus Wand.
+  getwand:
+   description: Give yourself the wand.
+  checkwand:
+   description: Check if you have the wand.
