@@ -1,15 +1,18 @@
 package me.dragohr.wands;
 
-import org.bukkit.inventory.*;
-import org.bukkit.*;
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+
+import org.bukkit.Bukkit;
+//import org.bukkit.ChatColor;
+import org.bukkit.inventory.ItemStack;
+
 
 public class Wands
 {
     private Main WP;
     public static final String[] wandtypes;
     public final HashMap<String, String> currentspell;
-    
     static {
         wandtypes = new String[] { "The Flower of Life" };
     }
@@ -106,12 +109,19 @@ public class Wands
         return null;
     }
     
-    private String[] getItemWandList(final String itemname, final ItemStack itemtype) {
-        if (itemname.equalsIgnoreCase("The Flower of Life")) {
-            return Spells.helwand;
-        }
-        return null;
-    }
+//    private String[] getItemWandList(final String itemname, final ItemStack itemtype) {
+//        if (itemname.equalsIgnoreCase(ChatColor.translateAlternateColorCodes('&', WP.getConfig().getString("itemwandname")))) {
+//            return Spells.helwand;
+//        }
+//        return null;
+//    }
+    
+	private String[] getItemWandList(final String itemname, final ItemStack itemtype) {
+		if (itemname.equalsIgnoreCase("The Flower of Life")) {
+			return Spells.helwand;
+		}
+		return null;
+	}
     
     public Main getWP() {
         return this.WP;
@@ -120,6 +130,7 @@ public class Wands
     public void setWP(final Main wP) {
         this.WP = wP;
     }
+   
     
     enum Staffs
     {
